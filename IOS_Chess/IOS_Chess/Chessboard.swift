@@ -16,11 +16,36 @@ class ChessBoard: NSObject {
     var whiteKing: King!
     var blackKing: King!
     
-    static func indexOf(origin:CGPoint) -> BoardIndex{
-        
+    func rm(piece:Piece){
+        if let chessPiece = piece as? UIChessPiece{
+            //rm from matrix
+            let indexOnBoard = ChessBoard.indexOf(origin: chessPiece.frame.origin)
+            
+            board[indexOnBoard.row][indexOnBoard.col]=Dummy(frame: chessPiece.frame)
+            
+            //rm from array of pieces
+            if let arrayIndex = vc.chessPieces.index(of: chessPiece){
+                vc.chessPieces.remove(at: arrayIndex)
+            }
+            
+            //rm piece from screen
+            chessPiece.removeFromSuperview()
+        }
     }
     
-    static func getFrame(forRow row:Int, forCol col: Int) ->CGRect{
+    func place(chessPiece: UIChessPiece, toIndex destinationIndex: BoardIndex, toOrigin destinationOrigin:CGPoint){
+        chessPiece.frame.origin = destinationOrigin
+        board[destinationIndex.row][destinationIndex.col] = chessPiece
+    }
+    
+    static func indexOf(origin:CGPoint) -> BoardIndex{
+        let row = (Int(origin.y)-ViewController.space_from_top)/ViewController.tile_size
+        let col = (Int(origin.x)-ViewController.space_from_left)/ViewController.tile_size
+
+        return BoardIndex(row:row,col:col)
+    }
+    
+    func getFrame(forRow row:Int, forCol col: Int) ->CGRect{
         let x = CGFloat(ViewController.space_from_left+col*ViewController.tile_size)
         let y = CGFloat(ViewController.space_from_top+row*ViewController.tile_size)
         

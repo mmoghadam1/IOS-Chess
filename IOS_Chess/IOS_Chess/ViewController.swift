@@ -54,17 +54,14 @@ class ViewController: UIViewController {
             y += ViewController.space_from_top
         
             destinationOrigin = CGPoint(x:x,y:y)
-            let sourceIndex = BoardIndex(row:0, col:0)//ChessBoard.indexOf(origin: sourceOrigin)
-            let destinationIndex = BoardIndex(row:0, col:0)//ChessBoard.indexOf(origin: destinationOrigin)
+            let sourceIndex = ChessBoard.indexOf(origin: sourceOrigin)
+            let destinationIndex = ChessBoard.indexOf(origin: destinationOrigin)
             if myChessGame.isMoveValid(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destinationIndex){
-                
-                
-                pieceDragged.frame.origin = destinationOrigin
+                myChessGame.move(piece: pieceDragged, fromIndex:sourceIndex, toIndex:destinationIndex,toOrigin:destinationOrigin)
             }
             else{
                 pieceDragged.frame.origin = sourceOrigin
             }
-            
         }
     }
     
