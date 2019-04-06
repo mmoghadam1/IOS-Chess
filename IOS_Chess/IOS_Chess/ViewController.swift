@@ -16,15 +16,16 @@ class ViewController: UIViewController {
     var pieceDragged: UIChessPiece!
     var sourceOrigin: CGPoint!
     var destinationOrigin:CGPoint!
-    static var space_from_left: Int = 11
-    static var space_from_right: Int = 12
-    static var space_from_top: Int = 160
-    static var tile_size: Int = 44
+    static var space_from_left: Int = 15
+    static var space_from_top: Int = 124
+    static var tile_size: Int = 48
     var myChessGame:ChessGame!
     var chessPieces:[UIChessPiece]!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        chessPieces=[]
+        myChessGame = ChessGame.init(viewController:self)
     }
 
 
