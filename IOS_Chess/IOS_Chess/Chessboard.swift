@@ -16,7 +16,11 @@ class ChessBoard: NSObject {
     var whiteKing: King!
     var blackKing: King!
     
-    func getFrame(forRow row:Int, forCol col: Int) ->CGRect{
+    static func indexOf(origin:CGPoint) -> BoardIndex{
+        
+    }
+    
+    static func getFrame(forRow row:Int, forCol col: Int) ->CGRect{
         let x = CGFloat(ViewController.space_from_left+col*ViewController.tile_size)
         let y = CGFloat(ViewController.space_from_top+row*ViewController.tile_size)
         
@@ -56,7 +60,7 @@ class ChessBoard: NSObject {
                 case 1:
                     board[row][col] = Pawn(frame: getFrame(forRow: row, forCol: col), color: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1), vc: vc)
                 case 6:
-                    board[row][col] = Rook(frame: getFrame(forRow: row, forCol: col), color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), vc: vc)
+                    board[row][col] = Pawn(frame: getFrame(forRow: row, forCol: col), color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), vc: vc)
                 case 7:
                     switch col{
                     case 0:
