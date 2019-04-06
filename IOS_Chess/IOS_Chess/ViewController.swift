@@ -10,6 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var lblDisplayTurn: UILabel!
+    @IBOutlet var panOUTLET: UIPanGestureRecognizer!
+    @IBOutlet weak var lblDisplayCheck: UILabel!
+    var pieceDragged: UIChessPiece!
+    var sourceOrigin: CGPoint!
+    var destinationOrigin:CGPoint!
+    static var space_from_left: Int = 11
+    static var space_from_right: Int = 12
+    static var space_from_top: Int = 160
+    static var tile_size: Int = 44
+    var myChessGame:ChessGame!
+    var chessPieces:[UIChessPiece]!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
