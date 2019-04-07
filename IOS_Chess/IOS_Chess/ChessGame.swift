@@ -54,9 +54,9 @@ class ChessGame: NSObject{
         case is Pawn:
             return isMoveValid(forPawn: piece as! Pawn, fromIndex: source, toIndex:destination)
         case is Rook, is Bishop, is Queen:
-            return isMoveValid(forRookBishopOrQueen: piece as! King, fromIndex: source, toIndex:destination)
+            return isMoveValid(forRookBishopOrQueen: piece , fromIndex: source, toIndex:destination)
         case is King:
-            isMoveValid(forKing: piece, fromIndex: source, toIndex:destination)
+            return isMoveValid(forKing: piece as! King, fromIndex: source, toIndex:destination)
         case is Knight:
             break
         default:
@@ -64,18 +64,19 @@ class ChessGame: NSObject{
         }
         return true
     }
-    func isMoveValid(forPawn: Pawn, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool{
+    func isMoveValid(forPawn pawn: Pawn, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool{
+        if !pawn.doesMoveSeemFine(fromIndex: source, toIndex: dest){
+            return false
+        }
+        return true
+    }
+    func isMoveValid(forRookBishopOrQueen piece:UIChessPiece , fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool{
         return true
     }
     func isMoveValid(forKing: King, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool{
         return true
     }
-    func isMoveValid(forPawn: King, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool{
-        return true
-    }
-    func isMoveValid(forKing: King, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool{
-        return true
-    }
+    
     
     
     

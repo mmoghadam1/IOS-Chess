@@ -20,7 +20,7 @@ class LogInViewController: UIViewController {
     @IBAction func LogInButton(_ sender: Any) {
         guard let Username = UsernameTF.text, let password = PasswordTF.text else {return}
         Firebase.Auth.auth().signIn(withEmail: Username, password: password) { (user, error) in
-            if let error = error {
+            if let error = error{
                 print(error.localizedDescription)
             }
             else if let user = Firebase.Auth.auth().currentUser{
