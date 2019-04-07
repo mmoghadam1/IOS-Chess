@@ -27,6 +27,21 @@ class King:UIChessPiece{
         vc.chessPieces.append(self)
         vc.view.addSubview(self)
     }
+    
+    func doesMoveSeemFine(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
+        let diffInRows = abs(dest.row - source.row)
+        let diffInCols = abs(dest.col - source.col)
+        
+        if case 0...1 = diffInRows{
+            
+            if case 0...1 = diffInCols{
+                return true
+            }
+        }
+        return false
+    }
+    
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }

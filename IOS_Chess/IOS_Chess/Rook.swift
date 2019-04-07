@@ -27,6 +27,14 @@ class Rook:UIChessPiece{
         vc.chessPieces.append(self)
         vc.view.addSubview(self)
     }
+    
+    func doesMoveSeemFine(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool{
+        if source.row == dest.row || source.col == dest.col{
+            return true
+        }
+        return false
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
