@@ -54,17 +54,23 @@ class ViewController: UIViewController {
             y += ViewController.space_from_top
         
             destinationOrigin = CGPoint(x:x,y:y)
+            
             let sourceIndex = ChessBoard.indexOf(origin: sourceOrigin)
             let destinationIndex = ChessBoard.indexOf(origin: destinationOrigin)
             if myChessGame.isMoveValid(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destinationIndex){
                 myChessGame.move(piece: pieceDragged, fromIndex:sourceIndex, toIndex:destinationIndex,toOrigin:destinationOrigin)
+                myChessGame.nextTurn()
+                updateTurn()
             }
             else{
                 pieceDragged.frame.origin = sourceOrigin
             }
         }
     }
-    
+    func updateTurn(){
+        lblDisplayTurn.text = myChessGame.isWhiteTurn ? "White's Turn" : "Black's Turn"
+        lblDisplayTurn.textColor = myChessGame.isWhiteTurn ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1):#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    }
     func drag(piece:UIChessPiece, usingGestureRecognizer gestureRecognizer:
         UIPanGestureRecognizer){
         let translation = gestureRecognizer.translation(in: view)
