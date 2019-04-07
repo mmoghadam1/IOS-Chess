@@ -58,15 +58,51 @@ class ChessGame: NSObject{
         case is King:
             return isMoveValid(forKing: piece as! King, fromIndex: source, toIndex:destination)
         case is Knight:
-            break
+            if !(piece as! Knight).doesFunctionSeemFine(fromIndex: source, toIndex: destination){
+                return false
+            }
         default:
             break
         }
         return true
     }
 
-    func IsMoveValid(forPawn: Pawn, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool{
-        return true
+    func IsMoveValid(forPawn pawn: Pawn, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool{
+        
+        if !pawn.doesMoveSeemFine(fromIndex: source, toIndex: dest){
+            return false
+        }
+        
+        // conditions for not attacking a piece
+        if source.col == dest.col{
+            if pawn.triesToAdvanceBy2{
+                var moveForward = 0
+                
+                if pawn.color == #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1){
+                    moveForward = 1
+                }
+                else{
+                    moveForward = -1
+                }
+                
+                if bboard.board[dest.row][dest.col] is Dummy && bboard.board[dest.row - moveForward][dest.col] is Dummy{
+                    return true
+                }
+            }
+            else{
+                if bboard.board[dest.row][dest.col] is Dummy {
+                    return true
+                }
+            }
+        }
+        
+        else{
+            if !(bboard.board[dest.row][dest.col] is Dummy){
+                return true
+            }
+        }
+        
+        return false
     }
     
     func isMoveValid(forRookOrBishopOrQueen piece: UIChessPiece, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
@@ -119,8 +155,52 @@ class ChessGame: NSObject{
     }
 
 
-    func isMoveValid(forKing: King, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool{
+    func isMoveValid(forKing king: King, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool{
+        
+        if !king.doesMoveSeemFine(fromIndex: source, toIndex: dest){
+            return false
+        }
+        
+        if isOpponentKing(nearKing: king, thatGoesTo: dest){
+            return false
+        }
+        
+        
         return true
+    }
+    
+    func isOpponentKing(nearKing movingKing: King, thatGoesTo destIndexOfMovingKing: BoardIndex) -> Bool {
+        
+        var theOpponentKing: King
+        
+        if movingKing == bboard.whiteKing{
+            theOpponentKing = bboard.blackKing
+        }
+        else{
+            theOpponentKing = bboard.whiteKing
+        }
+        
+        
+        var indexOfOpponentKing: BoardIndex!
+        
+        for row in 0..<bboard.rows{
+            for col in 0..<bboard.cols{
+                if let aKing = bboard.board[row][col] as? King, aKing == theOpponentKing{
+                    indexOfOpponentKing = BoardIndex(row: row, col: col)
+                }
+            }
+        }
+        
+        let differenceInRows = abs(indexOfOpponentKing.row - destIndexOfMovingKing.row)
+        let differenceInCols = abs(indexOfOpponentKing.col - destIndexOfMovingKing.col)
+        
+        // if the move is invalid
+        if case 0...1 = differenceInRows{
+            if case 0...1 = differenceInCols{
+                return true
+            }
+        }
+        return false
     }
     
     
