@@ -64,10 +64,58 @@ class ChessGame: NSObject{
         }
         return true
     }
-    func IsMoveValud(forPawn: Pawn, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool{
+    func IsMoveValid(forPawn: Pawn, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool{
         return true
     }
-    func
+    
+    func isMoveValid(forRookOrBishopOrQueen piece: UIChessPiece, fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
+        
+        switch piece {
+        case is Rook:
+            if !(piece as! Rook).doesMoveSeemFine(fromIndex: source, toIndex: dest){
+                return false
+            }
+        case is Bishop:
+            if !(piece as! Bishop).doesMoveSeemFine(fromIndex: source, toIndex: dest){
+                return false
+            }
+        case is Queen:
+            if !(piece as! Queen).doesMoveSeemfine(fromIndex: source, toIndex: dest){
+                return false
+            }
+        default:
+            if !(piece as! Queen).doesMoveSeemfine(fromIndex: source, toIndex: dest){
+                return false
+            }
+        }
+        
+        var increaseRow = 0
+        
+        if dest.row - source.row != 0 {
+            increaseRow = (dest.row - source.row) / abs(dest.row - source.row)
+        }
+        
+        var increaseCol = 0
+        
+        if dest.col - source.col != 0{
+            increaseRow = (dest.col - source.col) / abs(dest.col - source.col)
+        }
+        
+        var nextRow = source.row + increaseRow
+        var nextCol = source.col + increaseCol
+        
+        while nextRow != dest.row || nextCol != dest.col{
+            if !(bboard.board[nextRow][nextCol] is Dummy){
+                return false
+            }
+            
+            nextRow += increaseRow
+            nextCol += increaseCol
+        }
+        
+        return true
+        
+    }
     
     
     
