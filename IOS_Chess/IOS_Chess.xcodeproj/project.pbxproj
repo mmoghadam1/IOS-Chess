@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FA14B564FB6B4D8A7A7EF51 /* Pods_IOS_ChessUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67FBB1BE723D94CA4D4B923 /* Pods_IOS_ChessUITests.framework */; };
+		6C031A00225AAC4F00B21B2C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C0319FF225AAC4F00B21B2C /* GoogleService-Info.plist */; };
+		6C031A02225AAE5000B21B2C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C031A01225AAE5000B21B2C /* LogInViewController.swift */; };
+		6C031A04225AAEF900B21B2C /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C031A03225AAEF900B21B2C /* signUpViewController.swift */; };
 		6CDC5CF82256B88300FFEDD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDC5CF72256B88300FFEDD1 /* AppDelegate.swift */; };
 		6CDC5CFA2256B88300FFEDD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDC5CF92256B88300FFEDD1 /* ViewController.swift */; };
 		6CDC5CFD2256B88300FFEDD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CDC5CFB2256B88300FFEDD1 /* Main.storyboard */; };
@@ -14,6 +18,7 @@
 		6CDC5D022256B88400FFEDD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CDC5D002256B88400FFEDD1 /* LaunchScreen.storyboard */; };
 		6CDC5D0D2256B88500FFEDD1 /* IOS_ChessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDC5D0C2256B88500FFEDD1 /* IOS_ChessTests.swift */; };
 		6CDC5D182256B88500FFEDD1 /* IOS_ChessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDC5D172256B88500FFEDD1 /* IOS_ChessUITests.swift */; };
+		89B52C56C98453781D955B8F /* Pods_IOS_ChessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF79DFD66829402A3F26DFA /* Pods_IOS_ChessTests.framework */; };
 		94083B2C22582B4100F4DD09 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94083B2B22582B4100F4DD09 /* Piece.swift */; };
 		94083B2E22582B7500F4DD09 /* Pawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94083B2D22582B7500F4DD09 /* Pawn.swift */; };
 		94083B3022582B9100F4DD09 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94083B2F22582B9100F4DD09 /* Knight.swift */; };
@@ -27,6 +32,7 @@
 		94083B4222582CE700F4DD09 /* BoardIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94083B4122582CE700F4DD09 /* BoardIndex.swift */; };
 		94083B4422582CFB00F4DD09 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94083B4322582CFB00F4DD09 /* Menu.swift */; };
 		9486A49A22591F1400F58573 /* ChessBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9486A49922591F1400F58573 /* ChessBoard.swift */; };
+		AFE1452DDDE1DFFDC030B48B /* Pods_IOS_Chess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00581C026FF730C88E696DE /* Pods_IOS_Chess.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C0319FF225AAC4F00B21B2C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		6C031A01225AAE5000B21B2C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		6C031A03225AAEF900B21B2C /* signUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
 		6CDC5CF42256B88300FFEDD1 /* IOS_Chess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS_Chess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CDC5CF72256B88300FFEDD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CDC5CF92256B88300FFEDD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +69,8 @@
 		6CDC5D132256B88500FFEDD1 /* IOS_ChessUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOS_ChessUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CDC5D172256B88500FFEDD1 /* IOS_ChessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_ChessUITests.swift; sourceTree = "<group>"; };
 		6CDC5D192256B88500FFEDD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EFD9C640DCE06084C39A7A9 /* Pods-IOS_ChessTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS_ChessTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOS_ChessTests/Pods-IOS_ChessTests.release.xcconfig"; sourceTree = "<group>"; };
+		7FDAA081A2C6A73EDCA4A8E6 /* Pods-IOS_Chess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS_Chess.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOS_Chess/Pods-IOS_Chess.release.xcconfig"; sourceTree = "<group>"; };
 		94083B2B22582B4100F4DD09 /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
 		94083B2D22582B7500F4DD09 /* Pawn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pawn.swift; sourceTree = "<group>"; };
 		94083B2F22582B9100F4DD09 /* Knight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
@@ -73,6 +84,13 @@
 		94083B4122582CE700F4DD09 /* BoardIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardIndex.swift; sourceTree = "<group>"; };
 		94083B4322582CFB00F4DD09 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		9486A49922591F1400F58573 /* ChessBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessBoard.swift; sourceTree = "<group>"; };
+		A00581C026FF730C88E696DE /* Pods_IOS_Chess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_Chess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4AEAEE5A58DF24B066D5B30 /* Pods-IOS_ChessUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS_ChessUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOS_ChessUITests/Pods-IOS_ChessUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B67FBB1BE723D94CA4D4B923 /* Pods_IOS_ChessUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_ChessUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C09EFE24859A1A25A729EC1F /* Pods-IOS_ChessUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS_ChessUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOS_ChessUITests/Pods-IOS_ChessUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C70EC34EBA45483ED4557334 /* Pods-IOS_Chess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS_Chess.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOS_Chess/Pods-IOS_Chess.debug.xcconfig"; sourceTree = "<group>"; };
+		CFD743797256B100AE7755AA /* Pods-IOS_ChessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS_ChessTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOS_ChessTests/Pods-IOS_ChessTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DAF79DFD66829402A3F26DFA /* Pods_IOS_ChessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_ChessTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFE1452DDDE1DFFDC030B48B /* Pods_IOS_Chess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89B52C56C98453781D955B8F /* Pods_IOS_ChessTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,12 +114,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FA14B564FB6B4D8A7A7EF51 /* Pods_IOS_ChessUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		377EA80115FF9D55520768D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A00581C026FF730C88E696DE /* Pods_IOS_Chess.framework */,
+				DAF79DFD66829402A3F26DFA /* Pods_IOS_ChessTests.framework */,
+				B67FBB1BE723D94CA4D4B923 /* Pods_IOS_ChessUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6CDC5CEB2256B88300FFEDD1 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +138,8 @@
 				6CDC5D0B2256B88500FFEDD1 /* IOS_ChessTests */,
 				6CDC5D162256B88500FFEDD1 /* IOS_ChessUITests */,
 				6CDC5CF52256B88300FFEDD1 /* Products */,
+				6E2508C1E0CE57E8FA6D7287 /* Pods */,
+				377EA80115FF9D55520768D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,9 +159,12 @@
 				6CDC5CF72256B88300FFEDD1 /* AppDelegate.swift */,
 				6CDC5CF92256B88300FFEDD1 /* ViewController.swift */,
 				6CDC5CFB2256B88300FFEDD1 /* Main.storyboard */,
+				6C031A03225AAEF900B21B2C /* signUpViewController.swift */,
+				6C031A01225AAE5000B21B2C /* LogInViewController.swift */,
 				6CDC5CFE2256B88400FFEDD1 /* Assets.xcassets */,
 				6CDC5D002256B88400FFEDD1 /* LaunchScreen.storyboard */,
 				6CDC5D032256B88400FFEDD1 /* Info.plist */,
+				6C0319FF225AAC4F00B21B2C /* GoogleService-Info.plist */,
 				94083B2B22582B4100F4DD09 /* Piece.swift */,
 				94083B2D22582B7500F4DD09 /* Pawn.swift */,
 				94083B2F22582B9100F4DD09 /* Knight.swift */,
@@ -164,6 +200,19 @@
 			path = IOS_ChessUITests;
 			sourceTree = "<group>";
 		};
+		6E2508C1E0CE57E8FA6D7287 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C70EC34EBA45483ED4557334 /* Pods-IOS_Chess.debug.xcconfig */,
+				7FDAA081A2C6A73EDCA4A8E6 /* Pods-IOS_Chess.release.xcconfig */,
+				CFD743797256B100AE7755AA /* Pods-IOS_ChessTests.debug.xcconfig */,
+				7EFD9C640DCE06084C39A7A9 /* Pods-IOS_ChessTests.release.xcconfig */,
+				A4AEAEE5A58DF24B066D5B30 /* Pods-IOS_ChessUITests.debug.xcconfig */,
+				C09EFE24859A1A25A729EC1F /* Pods-IOS_ChessUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -171,9 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CDC5D1C2256B88500FFEDD1 /* Build configuration list for PBXNativeTarget "IOS_Chess" */;
 			buildPhases = (
+				56994BBB231117544097B86F /* [CP] Check Pods Manifest.lock */,
 				6CDC5CF02256B88300FFEDD1 /* Sources */,
 				6CDC5CF12256B88300FFEDD1 /* Frameworks */,
 				6CDC5CF22256B88300FFEDD1 /* Resources */,
+				5951380CCB1C13C083386C7D /* [CP] Embed Pods Frameworks */,
+				CB49EA135EDA83774B8E479F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -188,9 +240,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CDC5D1F2256B88500FFEDD1 /* Build configuration list for PBXNativeTarget "IOS_ChessTests" */;
 			buildPhases = (
+				67904F32FCFF5BA078553CDE /* [CP] Check Pods Manifest.lock */,
 				6CDC5D042256B88500FFEDD1 /* Sources */,
 				6CDC5D052256B88500FFEDD1 /* Frameworks */,
 				6CDC5D062256B88500FFEDD1 /* Resources */,
+				931EE427883BA454AEF17679 /* [CP] Embed Pods Frameworks */,
+				D45790D3C6C3785FF31E5205 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -206,9 +261,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6CDC5D222256B88500FFEDD1 /* Build configuration list for PBXNativeTarget "IOS_ChessUITests" */;
 			buildPhases = (
+				4AC1A2048CE2B3463D9EB290 /* [CP] Check Pods Manifest.lock */,
 				6CDC5D0F2256B88500FFEDD1 /* Sources */,
 				6CDC5D102256B88500FFEDD1 /* Frameworks */,
 				6CDC5D112256B88500FFEDD1 /* Resources */,
+				F704ADDA4DFD9D7E59064505 /* [CP] Embed Pods Frameworks */,
+				8CA9C2BFC93D477FFBBE5973 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,7 +286,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = "___rickjames___";
+				ORGANIZATIONNAME = ___rickjames___;
 				TargetAttributes = {
 					6CDC5CF32256B88300FFEDD1 = {
 						CreatedOnToolsVersion = 10.1;
@@ -269,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CDC5D022256B88400FFEDD1 /* LaunchScreen.storyboard in Resources */,
+				6C031A00225AAC4F00B21B2C /* GoogleService-Info.plist in Resources */,
 				6CDC5CFF2256B88400FFEDD1 /* Assets.xcassets in Resources */,
 				6CDC5CFD2256B88300FFEDD1 /* Main.storyboard in Resources */,
 			);
@@ -290,6 +349,162 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4AC1A2048CE2B3463D9EB290 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IOS_ChessUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56994BBB231117544097B86F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IOS_Chess-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5951380CCB1C13C083386C7D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-IOS_Chess/Pods-IOS_Chess-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IOS_Chess/Pods-IOS_Chess-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67904F32FCFF5BA078553CDE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IOS_ChessTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CA9C2BFC93D477FFBBE5973 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IOS_ChessUITests/Pods-IOS_ChessUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		931EE427883BA454AEF17679 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IOS_ChessTests/Pods-IOS_ChessTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB49EA135EDA83774B8E479F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IOS_Chess/Pods-IOS_Chess-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D45790D3C6C3785FF31E5205 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IOS_ChessTests/Pods-IOS_ChessTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F704ADDA4DFD9D7E59064505 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IOS_ChessUITests/Pods-IOS_ChessUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6CDC5CF02256B88300FFEDD1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -307,8 +522,10 @@
 				94083B4422582CFB00F4DD09 /* Menu.swift in Sources */,
 				94083B4222582CE700F4DD09 /* BoardIndex.swift in Sources */,
 				94083B2C22582B4100F4DD09 /* Piece.swift in Sources */,
+				6C031A02225AAE5000B21B2C /* LogInViewController.swift in Sources */,
 				94083B2E22582B7500F4DD09 /* Pawn.swift in Sources */,
 				94083B3622582BBE00F4DD09 /* King.swift in Sources */,
+				6C031A04225AAEF900B21B2C /* signUpViewController.swift in Sources */,
 				94083B3022582B9100F4DD09 /* Knight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,15 +699,13 @@
 		};
 		6CDC5D1D2256B88500FFEDD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C70EC34EBA45483ED4557334 /* Pods-IOS_Chess.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WJL599RX7H;
 				INFOPLIST_FILE = IOS_Chess/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.morley.IOS-Chess";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -500,15 +715,13 @@
 		};
 		6CDC5D1E2256B88500FFEDD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FDAA081A2C6A73EDCA4A8E6 /* Pods-IOS_Chess.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WJL599RX7H;
 				INFOPLIST_FILE = IOS_Chess/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.morley.IOS-Chess";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -518,17 +731,14 @@
 		};
 		6CDC5D202256B88500FFEDD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFD743797256B100AE7755AA /* Pods-IOS_ChessTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WJL599RX7H;
 				INFOPLIST_FILE = IOS_ChessTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.morley.IOS-ChessTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -539,17 +749,14 @@
 		};
 		6CDC5D212256B88500FFEDD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EFD9C640DCE06084C39A7A9 /* Pods-IOS_ChessTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WJL599RX7H;
 				INFOPLIST_FILE = IOS_ChessTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.morley.IOS-ChessTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -560,16 +767,13 @@
 		};
 		6CDC5D232256B88500FFEDD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4AEAEE5A58DF24B066D5B30 /* Pods-IOS_ChessUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WJL599RX7H;
 				INFOPLIST_FILE = IOS_ChessUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.morley.IOS-ChessUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -580,16 +784,13 @@
 		};
 		6CDC5D242256B88500FFEDD1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C09EFE24859A1A25A729EC1F /* Pods-IOS_ChessUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WJL599RX7H;
 				INFOPLIST_FILE = IOS_ChessUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.morley.IOS-ChessUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
