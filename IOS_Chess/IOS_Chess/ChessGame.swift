@@ -14,10 +14,107 @@ class ChessGame: NSObject{
     var winner: String?
     
     init(viewController: ViewController){
+        super.init()
         bboard = ChessBoard.init(viewController:viewController)
     }
     
+    func getArrayOfPossibleMoves(forPiece piece: UIChessPiece) -> [BoardIndex]{
+        
+        var arrayOfMoves: [BoardIndex] = []
+        let source = bboard.getIndex(forChessPiece: piece)!
+        
+        for row in 0..<bboard.rows{
+            for col in 0..<bboard.cols{
+                
+                let dest = BoardIndex(row: row, col: col)
+                
+                if isRegularMoveValid(forPiece: piece, fromIndex: source, toIndex: dest){
+                    arrayOfMoves.append(dest)
+                }
+            }
+        }
+        
+        return arrayOfMoves
+    }
     
+    func AIMove(){
+        //get white king if possible
+        if getPlayerChecked() == "White" {
+            for chessPiece in bboard.vc.chessPieces{
+                if chessPiece.color == #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1){
+                    guard let source = bboard.getIndex(forChessPiece: chessPiece) else{
+                        continue
+                    }
+                    guard let dest = bboard.getIndex(forChessPiece: bboard.whiteKing) else{
+                        continue
+                    }
+                    if isRegularMoveValid(forPiece: chessPiece, fromIndex: source, toIndex: dest){
+                        move(piece: chessPiece, fromIndex: source, toIndex: dest, toOrigin: bboard.whiteKing.frame.origin)
+                        return
+                    }
+                }
+            }
+        }
+        //attack undefended piece
+        if getPlayerChecked() == nil{
+            if attackedPiece(){
+                print("AI attacked")
+                return
+            }
+        }
+        var hasMove = false
+        var escapesFromCheck = 0
+        searchForMoves: while hasMove == false {
+            //get random piece
+            let randPieceIndex = Int(arc4random_uniform(UInt32(bboard.vc.chessPieces.count)))
+            let pieceToMove = bboard.vc.chessPieces[randPieceIndex]
+            guard pieceToMove.color == #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) else{
+                continue searchForMoves
+            }
+            //get random move
+            let arrayOfMoves = getArrayOfPossibleMoves(forPiece: pieceToMove)
+            guard arrayOfMoves.isEmpty == false else{
+                continue searchForMoves
+            }
+            let randomMoves = Int(arc4random_uniform(UInt32(arrayOfMoves.count)))
+            let randomDestination = arrayOfMoves[randomMoves]
+            let destOrigin = ChessBoard.getFrame(forRow: randomDestination.row, forCol: randomDestination.col).origin
+            guard let sourceIndex = bboard.getIndex(forChessPiece: pieceToMove) else{
+                continue searchForMoves
+            }
+            //simulate ai movement
+            let takenPiece = bboard.board[randomDestination.row][randomDestination.col]
+            bboard.board[randomDestination.row][randomDestination.col] = bboard.board[sourceIndex.row][sourceIndex.col]
+            bboard.board[sourceIndex.row][sourceIndex.col] = Dummy()
+            
+            if escapesFromCheck < 10000{
+                guard getPlayerChecked() != "Black" else{
+                    //undo move
+                    bboard.board[sourceIndex.row][sourceIndex.col] = bboard.board[randomDestination.row][randomDestination.col]
+                    bboard.board[randomDestination.row][randomDestination.col] = takenPiece
+                    escapesFromCheck+=1
+                    continue searchForMoves
+                }
+            }
+            //undo move
+            bboard.board[sourceIndex.row][sourceIndex.col] = bboard.board[randomDestination.row][randomDestination.col]
+            bboard.board[randomDestination.row][randomDestination.col] = takenPiece
+            
+            if isbestAIMove(forScoreOver: 2){
+                print("AI made its best move")
+                return
+            }
+            move(piece: pieceToMove, fromIndex: sourceIndex, toIndex: randomDestination, toOrigin: destOrigin)
+            hasMove = true
+        }
+    }
+
+    func isbestAIMove(forScoreOver limit: Int) ->Bool{
+        return false
+    }
+    func attackedPiece() -> Bool{
+        return false
+    }
     
     func getPlayerChecked() -> String?{
         guard let whiteKingIndex = bboard.getIndex(forChessPiece: bboard.whiteKing)

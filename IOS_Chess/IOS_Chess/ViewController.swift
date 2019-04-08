@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     static var tile_size: Int = 48
     var myChessGame:ChessGame!
     var chessPieces:[UIChessPiece]!
+    var playWithAI: Bool! = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -65,8 +67,54 @@ class ViewController: UIViewController {
             else{
                 pieceDragged.frame.origin = sourceOrigin
             }
+            resumeGame()
+        }
+        
+    }
+    func resumeGame(){
+        //display checks, if any
+        displayCheck()
+        
+        //change the turn
+        myChessGame.nextTurn()
+        
+        //display turn on screen
+        updateTurn()
+        
+        //make AI move, if necessary
+        if playWithAI == true{ // &&}!myChessGame.isWhiteTurn{
+            
+            myChessGame.AIMove()
+            print("AI: ---------------")
+            /*
+            if myChessGame.isGameOver(){
+                displayWinner()
+                return
+            }
+            
+            
+            if shouldPromotePawn(){
+                promote(pawn: myChessGame.getPawnToBePromoted()!, into: "Queen")
+            }*/
+            
+            displayCheck()
+            
+            myChessGame.nextTurn()
+            
+            updateTurn()
         }
     }
+    func displayCheck(){
+        let playerChecked = myChessGame.getPlayerChecked()
+        
+        if playerChecked != nil{
+            lblDisplayCheck.text = playerChecked! + " is in check!"
+        }
+        else{
+            lblDisplayCheck.text = nil
+        }
+    }
+    
     func updateTurn(){
         lblDisplayTurn.text = myChessGame.isWhiteTurn ? "White's Turn" : "Black's Turn"
         lblDisplayTurn.textColor = myChessGame.isWhiteTurn ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1):#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
