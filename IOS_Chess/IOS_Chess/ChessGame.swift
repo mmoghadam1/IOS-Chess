@@ -11,9 +11,70 @@ import UIKit
 class ChessGame: NSObject{
     var bboard:ChessBoard!
     var isWhiteTurn = true
+    var winner: String?
+    
     init(viewController: ViewController){
         bboard = ChessBoard.init(viewController:viewController)
     }
+    
+    
+    
+    func getPlayerChecked() -> String?{
+        guard let whiteKingIndex = bboard.getIndex(forChessPiece: bboard.whiteKing)
+            else{
+            return nil
+        }
+        guard let blackKingIndex = bboard.getIndex(forChessPiece: bboard.blackKing)
+        else{
+                return nil
+        }
+        
+        for row in 0..<bboard.rows{
+            for col in 0..<bboard.cols{
+                if let chessPiece = bboard.board[row][col] as? UIChessPiece{
+                    
+                    let chessPieceIndex = BoardIndex(row: row, col: col)
+                    
+                    if chessPiece.color == #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1){
+                        if isRegularMoveValid(forPiece: chessPiece, fromIndex: chessPieceIndex, toIndex: whiteKingIndex){
+                            return "White"
+                        }
+                    }
+                    else{
+                        if isRegularMoveValid(forPiece: chessPiece, fromIndex: chessPieceIndex, toIndex: blackKingIndex){
+                            return "Black"
+                        }
+                    }
+                }
+            }
+        }
+        return nil
+        
+    }
+    
+    func isGameOver() -> Bool{
+        if didSomeOneWin(){
+            return true
+        }
+        return false
+    }
+    
+    func didSomeOneWin() -> Bool{
+        
+        if !bboard.vc.chessPieces.contains(bboard.whiteKing){
+            winner = "Black"
+            return true
+        }
+        
+        if !bboard.vc.chessPieces.contains(bboard.blackKing){
+            winner = "White"
+            return true
+        }
+        return false
+        
+    }
+    
+    
     func move(piece chessPieceToMove: UIChessPiece, fromIndex sourceIndex: BoardIndex, toIndex destIndex: BoardIndex, toOrigin destOrigin: CGPoint){
         
         //get initial chess piece frame

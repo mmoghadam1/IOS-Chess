@@ -16,6 +16,19 @@ class ChessBoard: NSObject {
     var whiteKing: King!
     var blackKing: King!
     
+    
+    func getIndex(forChessPiece chessPieceToFind: UIChessPiece) -> BoardIndex? {
+        for row in 0..<rows{
+            for col in 0..<cols{
+                let aChessPiece = board[row][col] as? UIChessPiece
+                if chessPieceToFind == aChessPiece{
+                    return BoardIndex(row: row, col: col)
+                }
+            }
+        }
+        return nil
+    }
+    
     func rm(piece:Piece){
         if let chessPiece = piece as? UIChessPiece{
             //rm from matrix
