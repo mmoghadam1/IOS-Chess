@@ -113,6 +113,34 @@ class ChessGame: NSObject{
         return false
     }
     func attackedPiece() -> Bool{
+        loopPieces: for attackingPiece in bboard.vc.chessPieces{
+            guard attackingPiece.color == #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) else{
+                continue
+            }
+            guard let src = bboard.getIndex(forChessPiece: attackingPiece) else{
+                continue loopPieces
+            }
+            let possibleMoves = getArrayOfPossibleMoves(forPiece: attackingPiece)
+            
+            searchForAttack: for attackIndex in possibleMoves{
+                guard let attackedPiece = bboard.board[attackIndex.row][attackIndex.col] as? UIChessPiece else{
+                    continue searchForAttack
+                }
+                for row in 0..<bboard.rows{
+                    for col in 0..<bboard.cols{
+                        guard let defendingPiece = bboard.board[row][col] as? UIChessPiece, defendingPiece.color == #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) else{
+                            continue
+                        }
+                        let defendIndex = BoardIndex(row:row,col:col)
+                        if isRegularMoveValid(forPiece: defendingPiece, fromIndex: defendIndex, toIndex: attackIndex,alliedAttack: true){
+                            continue searchForAttack
+                        }
+                    }
+                }
+                move(piece: attackingPiece, fromIndex: src, toIndex: attackIndex, toOrigin: attackedPiece.frame.origin)
+                return true
+            }
+        }
         return false
     }
     
@@ -199,14 +227,16 @@ class ChessGame: NSObject{
         }
         return isRegularMoveValid(forPiece: piece, fromIndex: sourceIndex, toIndex: destinationIndex)
     }
-    func isRegularMoveValid(forPiece piece:UIChessPiece, fromIndex source: BoardIndex, toIndex destination: BoardIndex) -> Bool {
+    func isRegularMoveValid(forPiece piece:UIChessPiece, fromIndex source: BoardIndex, toIndex destination: BoardIndex, alliedAttack: Bool = false) -> Bool {
         guard source != destination else{
             print("Moving piece to same position")
             return false
         }
-        guard !attackingPiece(sourcePiece: piece, destinationIndex: destination) else {
-            print("attacking wrongpiece")
-            return false
+        if !alliedAttack{
+            guard !attackingPiece(sourcePiece: piece, destinationIndex: destination) else {
+                print("attacking wrongpiece")
+                return false
+            }
         }
         switch piece {
         case is Pawn:
