@@ -61,13 +61,12 @@ class ViewController: UIViewController {
             let destinationIndex = ChessBoard.indexOf(origin: destinationOrigin)
             if myChessGame.isMoveValid(piece: pieceDragged, fromIndex: sourceIndex, toIndex: destinationIndex){
                 myChessGame.move(piece: pieceDragged, fromIndex:sourceIndex, toIndex:destinationIndex,toOrigin:destinationOrigin)
-                myChessGame.nextTurn()
-                updateTurn()
+                resumeGame()
             }
             else{
                 pieceDragged.frame.origin = sourceOrigin
             }
-            resumeGame()
+            
         }
         
     }

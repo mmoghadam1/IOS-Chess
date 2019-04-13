@@ -293,9 +293,9 @@ class ChessGame: NSObject{
         var increaseCol = 0
         
         if dest.col - source.col != 0{
-            increaseRow = (dest.col - source.col) / abs(dest.col - source.col)
+            increaseCol = (dest.col - source.col) / abs(dest.col - source.col)
         }
-        
+
         var nextRow = source.row + increaseRow
         var nextCol = source.col + increaseCol
         
@@ -360,8 +360,6 @@ class ChessGame: NSObject{
         }
         return false
     }
-    
-    
     
     
     func attackingPiece(sourcePiece: UIChessPiece, destinationIndex: BoardIndex) -> Bool {
