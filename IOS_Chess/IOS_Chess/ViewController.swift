@@ -114,6 +114,68 @@ class ViewController: UIViewController {
         }
     }
     
+    func promote(pawn pawnToBePromoted: Pawn, into pieceName: String){
+        let color = pawnToBePromoted.color
+        let frame = pawnToBePromoted.frame
+        let pawnIndex = ChessBoard.indexOf(origin: pawnToBePromoted.frame.origin)
+        
+        myChessGame.bboard.rm(piece: pawnToBePromoted)
+        
+        switch pieceName {
+        case "Queen":
+            myChessGame.bboard.board[pawnIndex.row][pawnIndex.col] = Queen(frame: frame, color: color, vc: self)
+            
+        case "Bishop":
+            myChessGame.bboard.board[pawnIndex.row][pawnIndex.col] = Bishop(frame: frame, color: color, vc: self)
+            
+        case "Knight":
+            myChessGame.bboard.board[pawnIndex.row][pawnIndex.col] = Knight(frame: frame, color: color, vc: self)
+            
+        case "Rook":
+            myChessGame.bboard.board[pawnIndex.row][pawnIndex.col] = Rook(frame: frame, color: color, vc: self)
+        default:
+            break
+        }
+        
+    }
+    
+    func promptForPawnPromotion(){
+        if let pawnToPromote = myChessGame.getPawnForPromotion(){
+            
+            let box = UIAlertController(title: "Pawn promotion", message: "Choose piece", preferredStyle: UIAlertController.Style.alert)
+            
+            box.addAction(UIAlertAction(title: "Queen", style: UIAlertAction.Style.default, handler: {
+                action in
+                self.promote(pawn: pawnToPromote, into: action.title!)
+                self.resumeGame()
+            }))
+            
+            box.addAction(UIAlertAction(title: "Bishop", style: UIAlertAction.Style.default, handler: {
+                action in
+                self.promote(pawn: pawnToPromote, into: action.title!)
+                self.resumeGame()
+            }))
+            
+            box.addAction(UIAlertAction(title: "Knight", style: UIAlertAction.Style.default, handler: {
+                action in
+                self.promote(pawn: pawnToPromote, into: action.title!)
+                self.resumeGame()
+            }))
+            
+            box.addAction(UIAlertAction(title: "Rook", style: UIAlertAction.Style.default, handler: {
+                action in
+                self.promote(pawn: pawnToPromote, into: action.title!)
+                self.resumeGame()
+            }))
+            
+            self.present(box, animated: true, completion: nil)
+        }
+    }
+    
+    func shouldPromotePawn() -> Bool {
+        return (myChessGame.getPawnForPromotion() != nil)
+    }
+    
     func updateTurn(){
         lblDisplayTurn.text = myChessGame.isWhiteTurn ? "White's Turn" : "Black's Turn"
         lblDisplayTurn.textColor = myChessGame.isWhiteTurn ? #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1):#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)

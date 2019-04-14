@@ -144,6 +144,21 @@ class ChessGame: NSObject{
         return false
     }
     
+    
+    
+    func getPawnForPromotion() -> Pawn?{
+        for chessPiece in bboard.vc.chessPieces{
+            if let pawn = chessPiece as? Pawn{
+                let pawnIndex = ChessBoard.indexOf(origin: pawn.frame.origin)
+                if pawnIndex.row == 0 || pawnIndex.col == 7{
+                    return pawn
+                }
+            }
+        }
+        return nil
+    }
+    
+    
     func getPlayerChecked() -> String?{
         guard let whiteKingIndex = bboard.getIndex(forChessPiece: bboard.whiteKing)
             else{
