@@ -144,6 +144,25 @@ class ChessGame: NSObject{
         return false
     }
     
+    func getScore(ofPiece aChessPiece: UIChessPiece) -> Int{
+        var locationScore = 0
+        guard let source = bboard.getIndex(forChessPiece: aChessPiece) else {
+            return 0
+        }
+        for row in 0..<bboard.rows{
+            for col in 0..<bboard.cols{
+                if bboard.board[row][col] is UIChessPiece{
+                    let dest = BoardIndex(row: row, col: col)
+                    
+                    if isRegularMoveValid(forPiece: aChessPiece, fromIndex: source, toIndex: dest, alliedAttack: true){
+                        locationScore += 1
+                    }
+                }
+            }
+        }
+        return locationScore
+    }
+    
     
     
     func getPawnForPromotion() -> Pawn?{

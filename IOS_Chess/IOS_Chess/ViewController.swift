@@ -114,6 +114,30 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    func displayWinner(){
+        let alert = UIAlertController(title: "Game over", message: "\(myChessGame.winner!) wins!", preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Back to menu", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
+            self.performSegue(withIdentifier: "GameToMain", sender: self)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Rematch", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
+            
+            for chessPiece in self.chessPieces{
+                self.myChessGame.bboard.rm(piece: chessPiece)
+            }
+            
+            self.myChessGame = ChessGame(viewController: self)
+            
+            self.updateTurn()
+            self.lblDisplayCheck.text = nil
+            
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func promote(pawn pawnToBePromoted: Pawn, into pieceName: String){
         let color = pawnToBePromoted.color
         let frame = pawnToBePromoted.frame
@@ -175,6 +199,8 @@ class ViewController: UIViewController {
     func shouldPromotePawn() -> Bool {
         return (myChessGame.getPawnForPromotion() != nil)
     }
+    
+    
     
     func updateTurn(){
         lblDisplayTurn.text = myChessGame.isWhiteTurn ? "White's Turn" : "Black's Turn"

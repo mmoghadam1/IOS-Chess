@@ -534,6 +534,7 @@
                         <outlet property="lblDisplayCheck" destination="2od-oG-ZC7" id="9nK-dt-66r"/>
                         <outlet property="lblDisplayTurn" destination="i6J-M9-jxf" id="drc-lT-bi4"/>
                         <outlet property="panOUTLET" destination="jos-lP-aWC" id="6mm-DJ-a5U"/>
+                        <segue destination="SdA-jk-Uu4" kind="show" identifier="GameToMain" id="QZ3-2d-dcc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -547,6 +548,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fh2-jv-QZo"/>
-        <segue reference="4sg-54-Qks"/>
+        <segue reference="QZ3-2d-dcc"/>
     </inferredMetricsTieBreakers>
 </document>

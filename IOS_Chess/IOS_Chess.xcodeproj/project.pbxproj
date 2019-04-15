@@ -12,8 +12,8 @@
 		6C031A02225AAE5000B21B2C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C031A01225AAE5000B21B2C /* LogInViewController.swift */; };
 		6C031A04225AAEF900B21B2C /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C031A03225AAEF900B21B2C /* signUpViewController.swift */; };
 		6C5779C32263D43100E2110B /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5779C22263D43100E2110B /* MenuViewController.swift */; };
-		6C5779C52263D70C00E2110B /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C5779C42263D70C00E2110B /* images.png */; };
 		6C5779C72263D9B000E2110B /* Unknown-1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6C5779C62263D9B000E2110B /* Unknown-1.jpeg */; };
+		6CCBAE3F2264F52D0085374F /* images.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CCBAE3E2264F52D0085374F /* images.png */; };
 		6CDC5CF82256B88300FFEDD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDC5CF72256B88300FFEDD1 /* AppDelegate.swift */; };
 		6CDC5CFA2256B88300FFEDD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDC5CF92256B88300FFEDD1 /* ViewController.swift */; };
 		6CDC5CFD2256B88300FFEDD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CDC5CFB2256B88300FFEDD1 /* Main.storyboard */; };
@@ -60,8 +60,8 @@
 		6C031A01225AAE5000B21B2C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		6C031A03225AAEF900B21B2C /* signUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
 		6C5779C22263D43100E2110B /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		6C5779C42263D70C00E2110B /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = images.png; path = ../../../images.png; sourceTree = "<group>"; };
 		6C5779C62263D9B000E2110B /* Unknown-1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Unknown-1.jpeg"; path = "../../../Unknown-1.jpeg"; sourceTree = "<group>"; };
+		6CCBAE3E2264F52D0085374F /* images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = images.png; path = ../../images.png; sourceTree = "<group>"; };
 		6CDC5CF42256B88300FFEDD1 /* IOS_Chess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOS_Chess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CDC5CF72256B88300FFEDD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CDC5CF92256B88300FFEDD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -185,8 +185,8 @@
 				94083B3F22582CD000F4DD09 /* ExtensionUIChessPiece.swift */,
 				94083B4122582CE700F4DD09 /* BoardIndex.swift */,
 				94083B4322582CFB00F4DD09 /* Menu.swift */,
+				6CCBAE3E2264F52D0085374F /* images.png */,
 				6C5779C62263D9B000E2110B /* Unknown-1.jpeg */,
-				6C5779C42263D70C00E2110B /* images.png */,
 			);
 			path = IOS_Chess;
 			sourceTree = "<group>";
@@ -336,9 +336,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CDC5D022256B88400FFEDD1 /* LaunchScreen.storyboard in Resources */,
-				6C5779C52263D70C00E2110B /* images.png in Resources */,
 				6C5779C72263D9B000E2110B /* Unknown-1.jpeg in Resources */,
 				6C031A00225AAC4F00B21B2C /* GoogleService-Info.plist in Resources */,
+				6CCBAE3F2264F52D0085374F /* images.png in Resources */,
 				6CDC5CFF2256B88400FFEDD1 /* Assets.xcassets in Resources */,
 				6CDC5CFD2256B88300FFEDD1 /* Main.storyboard in Resources */,
 			);
