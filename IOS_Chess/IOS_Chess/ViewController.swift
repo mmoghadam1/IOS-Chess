@@ -85,7 +85,7 @@ class ViewController: UIViewController {
             
             myChessGame.AIMove()
             print("AI: ---------------")
-            /*
+            
             if myChessGame.isGameOver(){
                 displayWinner()
                 return
@@ -93,8 +93,8 @@ class ViewController: UIViewController {
             
             
             if shouldPromotePawn(){
-                promote(pawn: myChessGame.getPawnToBePromoted()!, into: "Queen")
-            }*/
+                promote(pawn: myChessGame!.getPawnForPromotion()!, into: "Queen")
+            }
             
             displayCheck()
             
