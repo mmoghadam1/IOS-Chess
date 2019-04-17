@@ -224,7 +224,7 @@ class ChessGame: NSObject{
         for chessPiece in bboard.vc.chessPieces{
             if let pawn = chessPiece as? Pawn{
                 let pawnIndex = ChessBoard.indexOf(origin: pawn.frame.origin)
-                if pawnIndex.row == 0 || pawnIndex.col == 7{
+                if pawnIndex.row == 0 || pawnIndex.row == 7{
                     return pawn
                 }
             }

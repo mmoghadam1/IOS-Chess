@@ -213,6 +213,8 @@ class ViewController: UIViewController {
         piece.center = CGPoint(x:translation.x+piece.center.x,y:translation.y+piece.center.y)
         gestureRecognizer.setTranslation(CGPoint.zero, in: view)
     }
+    
+  
 
 
 }
