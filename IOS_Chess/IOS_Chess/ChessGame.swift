@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class ChessGame: NSObject{
     var bboard:ChessBoard!
     var isWhiteTurn = true
     var winner: String?
+    var wins = Int()
     
     init(viewController: ViewController){
         super.init()
@@ -282,6 +284,7 @@ class ChessGame: NSObject{
         
         if !bboard.vc.chessPieces.contains(bboard.blackKing){
             winner = "White"
+            incrementWins()
             return true
         }
         return false
@@ -519,6 +522,27 @@ class ChessGame: NSObject{
             }
         }
         return false
+    }
+    
+    func getUserWins() -> Int{
+        
+        let user = Auth.auth().currentUser?.uid
+        wins = Database.database().reference().child("users").child(user!).value(forKey: "wins") as! Int
+        return wins
+        
+    }
+    
+    func incrementWins(){
+        
+        var tmpWins = getUserWins()
+        tmpWins += 1
+        
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        
+        let user = (Auth.auth().currentUser?.uid)!
+        Database.database().reference().child("users").child(user).setValue(tmpWins, forKey: "wins")
+        
     }
     
 }

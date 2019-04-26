@@ -19,7 +19,10 @@ class MenuViewController: UIViewController {
         performSegue(withIdentifier: "MenuToGame", sender: self)
     }
     
-
+    @IBAction func GoToRanking(_ sender: Any) {
+        performSegue(withIdentifier: "menuToRanking", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         PlayOutlet.layer.cornerRadius = PlayOutlet.frame.height/2

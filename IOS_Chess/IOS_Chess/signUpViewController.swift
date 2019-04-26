@@ -50,7 +50,7 @@ class signUpViewController: UIViewController {
                 else {
                     print("new user created")
                     let user = Firebase.Auth.auth().currentUser
-                    ref.child("users").child((user?.uid)!).child("email").setValue(email)
+                    ref.child("users").child((user?.uid)!).child("wins").setValue(0)
                     
                     self.performSegue(withIdentifier: "CreateAccountToHome", sender: self)
                 }

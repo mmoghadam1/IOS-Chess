@@ -20,6 +20,7 @@
 		6CDC5D022256B88400FFEDD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CDC5D002256B88400FFEDD1 /* LaunchScreen.storyboard */; };
 		6CDC5D0D2256B88500FFEDD1 /* IOS_ChessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDC5D0C2256B88500FFEDD1 /* IOS_ChessTests.swift */; };
 		6CDC5D182256B88500FFEDD1 /* IOS_ChessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDC5D172256B88500FFEDD1 /* IOS_ChessUITests.swift */; };
+		6CF123BC22724E5F0042D5F6 /* RankingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF123BB22724E5F0042D5F6 /* RankingsViewController.swift */; };
 		89B52C56C98453781D955B8F /* Pods_IOS_ChessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAF79DFD66829402A3F26DFA /* Pods_IOS_ChessTests.framework */; };
 		94083B2C22582B4100F4DD09 /* Piece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94083B2B22582B4100F4DD09 /* Piece.swift */; };
 		94083B2E22582B7500F4DD09 /* Pawn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94083B2D22582B7500F4DD09 /* Pawn.swift */; };
@@ -73,6 +74,7 @@
 		6CDC5D132256B88500FFEDD1 /* IOS_ChessUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOS_ChessUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CDC5D172256B88500FFEDD1 /* IOS_ChessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_ChessUITests.swift; sourceTree = "<group>"; };
 		6CDC5D192256B88500FFEDD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CF123BB22724E5F0042D5F6 /* RankingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingsViewController.swift; sourceTree = "<group>"; };
 		7EFD9C640DCE06084C39A7A9 /* Pods-IOS_ChessTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS_ChessTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOS_ChessTests/Pods-IOS_ChessTests.release.xcconfig"; sourceTree = "<group>"; };
 		7FDAA081A2C6A73EDCA4A8E6 /* Pods-IOS_Chess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS_Chess.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOS_Chess/Pods-IOS_Chess.release.xcconfig"; sourceTree = "<group>"; };
 		94083B2B22582B4100F4DD09 /* Piece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Piece.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				6CDC5CF72256B88300FFEDD1 /* AppDelegate.swift */,
 				6CDC5CF92256B88300FFEDD1 /* ViewController.swift */,
 				6CDC5CFB2256B88300FFEDD1 /* Main.storyboard */,
+				6CF123BB22724E5F0042D5F6 /* RankingsViewController.swift */,
 				6C5779C22263D43100E2110B /* MenuViewController.swift */,
 				6C031A03225AAEF900B21B2C /* signUpViewController.swift */,
 				6C031A01225AAE5000B21B2C /* LogInViewController.swift */,
@@ -534,6 +537,7 @@
 				94083B2E22582B7500F4DD09 /* Pawn.swift in Sources */,
 				94083B3622582BBE00F4DD09 /* King.swift in Sources */,
 				6C031A04225AAEF900B21B2C /* signUpViewController.swift in Sources */,
+				6CF123BC22724E5F0042D5F6 /* RankingsViewController.swift in Sources */,
 				94083B3022582B9100F4DD09 /* Knight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
