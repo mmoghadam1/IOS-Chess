@@ -201,6 +201,7 @@ class ChessGame: NSObject{
         return false
     }
     
+    
     func getScore(ofPiece aChessPiece: UIChessPiece) -> Int{
         var locationScore = 0
         guard let source = bboard.getIndex(forChessPiece: aChessPiece) else {
@@ -221,7 +222,7 @@ class ChessGame: NSObject{
     }
     
     
-    
+    // when a pawn reaches the other side of the board it is changed into a queen
     func getPawnForPromotion() -> Pawn?{
         for chessPiece in bboard.vc.chessPieces{
             if let pawn = chessPiece as? Pawn{
@@ -234,7 +235,7 @@ class ChessGame: NSObject{
         return nil
     }
     
-    
+    //checks for when a king is in check
     func getPlayerChecked() -> String?{
         guard let whiteKingIndex = bboard.getIndex(forChessPiece: bboard.whiteKing)
             else{
@@ -267,7 +268,7 @@ class ChessGame: NSObject{
         return nil
         
     }
-    
+    //checks for if someone has won then returns true or false
     func isGameOver() -> Bool{
         if didSomeOneWin(){
             return true
@@ -275,6 +276,7 @@ class ChessGame: NSObject{
         return false
     }
     
+    //checks if someone has won the game
     func didSomeOneWin() -> Bool{
         
         if !bboard.vc.chessPieces.contains(bboard.whiteKing){
@@ -308,7 +310,9 @@ class ChessGame: NSObject{
         bboard.board[sourceIndex.row][sourceIndex.col] = Dummy(frame: initialChessPieceFrame)
     }
     
+    //checks to make sure the move a player makes is allowed
     func isMoveValid(piece:UIChessPiece, fromIndex sourceIndex: BoardIndex, toIndex destinationIndex:BoardIndex)->Bool{
+        // makes sure that the move corresponds to locations on the board
         guard isMoveOnBoard(forPieceFrom: sourceIndex, goesTo: destinationIndex) else{
             print("invalid move")
             return false
@@ -331,6 +335,7 @@ class ChessGame: NSObject{
             }
         }
         switch piece {
+            // checks for if each piece can make the move it was used for by calling its class function is move valid
         case is Pawn:
             return IsMoveValid(forPawn: piece as! Pawn, fromIndex: source, toIndex:destination)
         case is Rook, is Bishop, is Queen:
@@ -483,7 +488,7 @@ class ChessGame: NSObject{
         return false
     }
     
-    
+    //tells if a piece is attempting to take another piece  and then removes the taken piece
     func attackingPiece(sourcePiece: UIChessPiece, destinationIndex: BoardIndex) -> Bool {
         
         let dest:Piece = bboard.board[destinationIndex.row][destinationIndex.col]
@@ -523,7 +528,7 @@ class ChessGame: NSObject{
         }
         return false
     }
-    
+    // called when the user wins from increment wins returns the users prior number of wins
     func getUserWins() -> Int{
         
         let user = Auth.auth().currentUser?.uid
@@ -532,6 +537,7 @@ class ChessGame: NSObject{
         
     }
     
+    //takes the users prior number of wins and increments by 1 then pushes the new number of wins to the database
     func incrementWins(){
         
         var tmpWins = getUserWins()

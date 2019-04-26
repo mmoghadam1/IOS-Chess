@@ -28,6 +28,7 @@ class King:UIChessPiece{
         vc.view.addSubview(self)
     }
     
+    // sees if is a valid move for the piece
     func doesMoveSeemFine(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
         let diffInRows = abs(dest.row - source.row)
         let diffInCols = abs(dest.col - source.col)

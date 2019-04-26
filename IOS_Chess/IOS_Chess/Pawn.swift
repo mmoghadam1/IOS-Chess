@@ -30,6 +30,7 @@ class Pawn: UIChessPiece {
         vc.view.addSubview(self)
     }
     
+    // sees if is a valid move for the piece
     func doesMoveSeemFine(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool{
         if source.col == dest.col{
             if(source.row == 1 && dest.row == 3 && color == #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)) || (source.row == 6 && dest.row == 4 && color != #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)){

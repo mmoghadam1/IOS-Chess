@@ -25,6 +25,8 @@ class signUpViewController: UIViewController {
         let password = PasswordTF.text
         let ref = Database.database().reference().root
         
+        //checks to make sure email and password are valid then creates a new user and pushed to database
+        
         if EmailTF.text == "" {
             let alertController = UIAlertController(title: "Error", message: "Please enter your email", preferredStyle: .alert)
             

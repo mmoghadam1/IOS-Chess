@@ -28,6 +28,7 @@ class Queen:UIChessPiece{
         vc.view.addSubview(self)
     }
     
+    // sees if is a valid move for the piece
     
     func doesMoveSeemfine(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
         if source.row == dest.row || source.col == dest.col{

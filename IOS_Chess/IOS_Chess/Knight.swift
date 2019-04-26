@@ -28,7 +28,7 @@ init(frame:CGRect, color:UIColor, vc:ViewController){
     vc.view.addSubview(self)
     }
     
-    
+    // sees if is a valid move for the piece
     func doesFunctionSeemFine(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool{
         let validMoves = [(source.row - 1, source.col + 2), (source.row - 2, source.col + 1), (source.row - 2, source.col - 1), (source.row - 1, source.col - 2), (source.row + 1, source.col - 2), (source.row + 2, source.col - 1), (source.row + 2, source.col + 1), (source.row + 1, source.col + 2)]
         

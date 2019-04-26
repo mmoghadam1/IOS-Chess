@@ -19,6 +19,7 @@ class RankingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func getWins(){
+        //retieves the information for each user and then passes them into a dictionary
         let ref = Database.database().reference().child("users").observe(.value) { (snapshot) in
             for child in snapshot.children.allObjects as! [DataSnapshot] {
                 //print(child)
@@ -38,7 +39,7 @@ class RankingsViewController: UIViewController, UITableViewDelegate, UITableView
     
 
     }
-    
+    //sorts the list of users and their number of wins highest to lowest
     func RankUsers(){
         print("in rank user")
        leaderboard.sorted(by: <)
@@ -63,9 +64,11 @@ class RankingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // displays the number of rows in the table
         return scoreArray.count
     }
     
+    //determines what will be in each cell of the table
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")
         cell?.textLabel?.text = "\(userArray[indexPath.row])  Wins:  \(scoreArray[indexPath.row])"
@@ -80,6 +83,7 @@ class RankingsViewController: UIViewController, UITableViewDelegate, UITableView
 
         // Do any additional setup after loading the view.
     }
+    // reloads the table data once the screen appears
     override func viewDidAppear(_ animated: Bool) {
         self.LeaderBoardTable.reloadData()
     }

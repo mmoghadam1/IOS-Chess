@@ -18,6 +18,7 @@ class LogInViewController: UIViewController {
     
     
     @IBAction func LogInButton(_ sender: Any) {
+        //checks agains the firebase auth to see if user exists if so it takes them to the home page
         guard let Username = UsernameTF.text, let password = PasswordTF.text else {return}
         Firebase.Auth.auth().signIn(withEmail: Username, password: password) { (user, error) in
             if let error = error{

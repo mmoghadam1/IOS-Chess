@@ -28,6 +28,7 @@ class Bishop:UIChessPiece{
         vc.view.addSubview(self)
     }
     
+    // sees if is a valid move for the piece
     func doesMoveSeemFine(fromIndex source: BoardIndex, toIndex dest: BoardIndex) -> Bool {
         if abs(dest.row - source.row) == abs(dest.col - source.col){
             return true

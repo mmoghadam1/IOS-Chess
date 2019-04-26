@@ -104,6 +104,7 @@ class ViewController: UIViewController {
         }
     }
     func displayCheck(){
+        //lets the user know when they are in check or when they have their opponent in check
         let playerChecked = myChessGame.getPlayerChecked()
         
         if playerChecked != nil{
@@ -116,6 +117,7 @@ class ViewController: UIViewController {
     
     
     func displayWinner(){
+        // when a winner is deterrmined displays an alert letting the user know and giving them the option to play again or go to the home screen
         let alert = UIAlertController(title: "Game over", message: "\(myChessGame.winner!) wins!", preferredStyle: UIAlertController.Style.alert)
         
         alert.addAction(UIAlertAction(title: "Back to menu", style: UIAlertAction.Style.default, handler: { (UIAlertAction) in
@@ -162,7 +164,7 @@ class ViewController: UIViewController {
         }
         
     }
-    
+    // gives the user the option for what piece they would like when their pawn gets promoted
     func promptForPawnPromotion(){
         if let pawnToPromote = myChessGame.getPawnForPromotion(){
             
