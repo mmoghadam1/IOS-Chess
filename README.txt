@@ -1,7 +1,7 @@
 README
 IOS Chess: Richard Morley, Max Moghadam and Zachary Tanverakul
 
-For IOS Chess we used a swift as our programming language and Firebase for authentication as well as our database.
+For IOS Chess we used a swift as our programming language and Firebase for authentication as well as our database. We used Cocoa Pods to install the firebase dependancies into our project.
 IOS Chess is a single player chess game where the user plays agains an AI program designed for chess, this game implements all of the standard chess moves and rules. IOS Chess keeps track of the number of games a user has won and displays them in our leader board which ranks them based on number of games won.
 
 Files Structure:
